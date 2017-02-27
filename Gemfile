@@ -39,6 +39,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
   gem 'jazz_fingers'
   gem 'launchy', '~> 2.4', '>= 2.4.3'
   gem 'pry-rails'
