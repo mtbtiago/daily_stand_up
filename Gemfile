@@ -34,6 +34,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+end
+
 group :development, :test do
   # https://github.com/michaeldv/awesome_print
   gem 'awesome_print'

@@ -21,5 +21,6 @@ RSpec.describe Team, type: :model do
         expect(team.slug.present?).to be true
       end
     end
+    # TODO: test find_by_slug
   end
 end
