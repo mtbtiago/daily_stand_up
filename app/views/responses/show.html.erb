@@ -1,17 +1,23 @@
-<h2><%= @response.user.name %></h2>
-<p>
-  Your responses for <%= @response.team.name %> at <%= @response.day.today %>
+<div class="page-header">
+  <h1><%= @response.user.name %></h1>
+</div>
+<p class="lead">
+  Your responses for <strong><%= @response.team.name %></strong> on <%= @response.day.today %>
 </p>
 
-<p id="notice"><%= notice %></p>
+<% if notice.present? %>
+  <p id="notice"><%= notice %></p>
+<% end %>
 
 <dl>
-  <dt><%= @response.team.question_a %>:</dt>
+  <dt><%= @response.team.question_a %></dt>
   <dd><%= @response.response_a %></dd>
-  <dt><%= @response.team.question_b %>:</dt>
+  <dt><%= @response.team.question_b %></dt>
   <dd><%= @response.response_b %></dd>
-  <dt><%= @response.team.question_c %>:</dt>
+  <dt><%= @response.team.question_c %></dt>
   <dd><%= @response.response_c %></dd>
 </dl>
 
-<%= link_to 'Edit', edit_response_path(@response, slug: @response.slug), class: "btn btn-primary" %>
+<footer class="footer">
+  Changed your mind? Don't worry, <%= link_to 'you can change your responses', edit_response_path(@response, slug: @response.slug) %> again
+</footer>

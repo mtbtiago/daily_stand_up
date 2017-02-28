@@ -1,9 +1,8 @@
-<h1>Editing Response</h1>
-<h3>Good morning, <%= @response.user.name %></h3>
-<p>
-  Please fill your responses for <%= @response.team.name %> at <%= @response.day.today %>
+<div class="page-header">
+  <h1><%= @response.team.name %></h1>
+</div>
+<p class="lead">
+  Good morning, <strong><%= @response.user.name %></strong>. Please fill your responses for <%= @response.team.name %> on <%= @response.day.today %>
 </p>
 
 <%= render 'form', response: @response %>
-
-<%= link_to 'Show', response_path(@response, slug: @response.slug) %>
