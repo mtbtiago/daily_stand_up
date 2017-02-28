@@ -25,7 +25,9 @@ class Team < ApplicationRecord
     day
   end
 
-  def send_question(day)
-    DailyMailer.send_question(day).deliver_now
+  def send_questions(day)
+    day.responses.each do |response|
+      DailyMailer.send_question(response).deliver_now
+    end
   end
 end

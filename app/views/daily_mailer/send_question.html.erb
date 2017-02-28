@@ -1,4 +1,6 @@
 <h1>Daily Stand Up for <strong><%= @day.team.name %></strong></h1>
+<h2><%= @day.today %></h2>
 <p>
+  Hi, <%= @response.user.name %>.<br>
   Please fill questions <%= link_to 'here', edit_response_url(slug: @response.slug), target: '_blank' %>
 </p>

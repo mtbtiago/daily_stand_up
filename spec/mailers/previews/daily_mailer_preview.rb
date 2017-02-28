@@ -5,6 +5,6 @@ class DailyMailerPreview < ActionMailer::Preview
     future_date = 1.year.from_now
     team.days.where(today: future_date).destroy_all
     day = team.create_day(future_date)
-    DailyMailer.send_question(day) unless day.nil?
+    DailyMailer.send_question(day.responses.first) unless day.nil? || day.responses.empty?
   end
 end
