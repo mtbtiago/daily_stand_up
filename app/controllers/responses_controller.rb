@@ -14,7 +14,7 @@ class ResponsesController < ApplicationController
   def update
     respond_to do |format|
       if @response.update(response_params)
-        format.html { redirect_to response_path(@response, slug: @response.slug), notice: 'Response was successfully updated.' }
+        format.html { redirect_to response_path(slug: @response.slug), notice: 'Response was successfully updated.' }
         format.json { render :show, status: :ok, location: @response }
       else
         format.html { render :edit, slug: @response.slug }

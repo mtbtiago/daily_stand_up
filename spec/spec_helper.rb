@@ -68,6 +68,7 @@
 require_relative './support/spec_test_helper'
 require 'rack_session_access/capybara'
 require 'database_cleaner'
+require 'action_mailer'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
