@@ -1,0 +1,9 @@
+<h1>Editing Response</h1>
+<h3>Good morning, <%= @response.user.name %></h3>
+<p>
+  Please fill your responses for <%= @response.team.name %> at <%= @response.day.today %>
+</p>
+
+<%= render 'form', response: @response %>
+
+<%= link_to 'Show', response_path(@response, slug: @response.slug) %>

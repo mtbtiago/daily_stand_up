@@ -1,0 +1,35 @@
+<%= form_for(response, url: response_path(slug: response.slug)) do |f| %>
+  <% if response.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(response.errors.count, "error") %> prohibited this response from being saved:</h2>
+
+      <ul>
+      <% response.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <div class="form-group">
+      <%= f.label :response_a, response.team.question_a, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :response_a, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :response_b, response.team.question_b, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :response_b, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :response_c, response.team.question_c, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :response_c, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <%= f.submit %>
+<% end %>

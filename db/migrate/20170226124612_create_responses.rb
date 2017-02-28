@@ -8,7 +8,7 @@ class CreateResponses < ActiveRecord::Migration[5.0]
       t.string :response_a
       t.string :response_b
       t.string :response_c
-      t.boolean :user_has_responded, default: false
+      t.timestamp :user_responded
 
       t.timestamps
     end

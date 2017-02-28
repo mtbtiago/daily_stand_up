@@ -24,7 +24,7 @@ RSpec.describe Team, type: :model do
     it 'can be located by slug' do
       team = Team.first
       slug = team.slug
-      expect(Team.find_by_slug(slug).slug).to eq slug
+      expect(Team.find_by(slug: slug).slug).to eq slug
     end
   end
 end

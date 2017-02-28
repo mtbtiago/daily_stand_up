@@ -22,3 +22,7 @@ TeamUser.create!(
     { team: sisagua, user: irene, admin: false, active: true }
   ]
 )
+
+today = Day.create!(team: sisagua)
+
+sisagua.team_users.each { |tu| Response.create!(team: sisagua, day: today, user: tu.user) }

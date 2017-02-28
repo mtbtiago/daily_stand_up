@@ -2,9 +2,6 @@ module Slugable
   extend ActiveSupport::Concern
 
   module ClassMethods
-    def find_by_slug(slug)
-      find_by(slug: slug)
-    end
   end
 
   included do

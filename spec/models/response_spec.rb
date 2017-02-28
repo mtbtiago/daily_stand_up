@@ -19,7 +19,7 @@ RSpec.describe Response, type: :model do
     it 'can be located by slug' do
       response = create(:response)
       slug = response.slug
-      expect(Response.find_by_slug(slug).slug).to eq slug
+      expect(Response.find_by(slug: slug).slug).to eq slug
     end
   end
 end
