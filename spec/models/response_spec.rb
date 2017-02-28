@@ -16,6 +16,10 @@ RSpec.describe Response, type: :model do
         expect(response.slug.present?).to be true
       end
     end
-    # TODO: test find_by_slug
+    it 'can be located by slug' do
+      response = create(:response)
+      slug = response.slug
+      expect(Response.find_by_slug(slug).slug).to eq slug
+    end
   end
 end

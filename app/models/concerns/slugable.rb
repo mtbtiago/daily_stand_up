@@ -14,7 +14,7 @@ module Slugable
     protected
 
     def after_initialize
-      self.slug = SecureRandom.uuid
+      self.slug = SecureRandom.uuid unless slug.present?
     end
   end
 end

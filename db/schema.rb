@@ -31,9 +31,10 @@ ActiveRecord::Schema.define(version: 20170227192140) do
     t.string   "slug"
     t.string   "response_a"
     t.string   "response_b"
-    t.string   "responce_c"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "response_c"
+    t.boolean  "user_has_responded", default: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.index ["day_id"], name: "index_responses_on_day_id", using: :btree
     t.index ["slug"], name: "index_responses_on_slug", unique: true, using: :btree
     t.index ["team_id"], name: "index_responses_on_team_id", using: :btree

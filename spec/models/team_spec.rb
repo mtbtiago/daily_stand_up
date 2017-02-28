@@ -21,6 +21,10 @@ RSpec.describe Team, type: :model do
         expect(team.slug.present?).to be true
       end
     end
-    # TODO: test find_by_slug
+    it 'can be located by slug' do
+      team = Team.first
+      slug = team.slug
+      expect(Team.find_by_slug(slug).slug).to eq slug
+    end
   end
 end
