@@ -12,24 +12,17 @@
   <% end %>
 
   <div class="actions">
-    <div class="form-group">
-      <%= f.label :response_a, response.team.question_a, class: "col-sm-2 control-label" %>
-      <div class="col-sm-10">
-        <%= f.text_field :response_a, class: "form-control" %>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :response_b, response.team.question_b, class: "col-sm-2 control-label" %>
-      <div class="col-sm-10">
-        <%= f.text_field :response_b, class: "form-control" %>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :response_c, response.team.question_c, class: "col-sm-2 control-label" %>
-      <div class="col-sm-10">
-        <%= f.text_field :response_c, class: "form-control" %>
-      </div>
+    <div class="row">
+      <%= f.label :response_a, response.team.question_a, class: "control-label" %>
+      <%= f.text_field :response_a, class: "form-control" %>
+      <%= f.label :response_b, response.team.question_b, class: "control-label" %>
+      <%= f.text_field :response_b, class: "form-control" %>
+      <%= f.label :response_c, response.team.question_c, class: "control-label" %>
+      <%= f.text_field :response_c, class: "form-control" %>
     </div>
   </div>
-  <%= f.submit %>
+
+  <div class="row">
+    <%= f.submit class: "btn btn-success"%>
+  </div>
 <% end %>
