@@ -1,12 +1,18 @@
 <div class="page-header">
-  <h1><%= @response.user.name %></h1>
+  <h1><%= @response.team.name %></h1>
 </div>
 <p class="lead">
-  Your responses for <strong><%= @response.team.name %></strong> on <%= @response.day.today %>
+  <strong><%= @response.user.name %></strong>. Your responses on <%= @response.day.today %>
 </p>
 
-<% if notice.present? %>
-  <p id="notice"><%= notice %></p>
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, class: "alert alert-#{ name == 'error' ? "danger" : "success" } alert-dismissable", role: "alert" do %>
+    <button type="button" class="close" data-dismiss="alert">
+      <span aria-hidden="true">&times;</span>
+      <span class="sr-only">Close</span>
+    </button>
+    <%= msg %>
+  <% end %>
 <% end %>
 
 <dl>
