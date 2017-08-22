@@ -1,9 +1,9 @@
 tiago = User.create!(name: 'tiago', email: 'tiago.ameller@gmail.com')
-lluis = User.create!(name: 'lluis', email: 'mtb.tiago@gmail.com')
-irene = User.create!(name: 'irene', email: 'tiago@sistemasc.net')
+clara = User.create!(name: 'clara', email: 'tiago@sistemasc.net')
+mikel = User.create!(name: 'mikel', email: 'hello@tiagoameller.com')
 
-sisagua = Team.create!(
-  name: 'SisAgua',
+cbit = Team.create!(
+  name: 'CBit',
   active: true,
   slug: SecureRandom.uuid,
   standup_start_hour: 8,
@@ -17,12 +17,12 @@ sisagua = Team.create!(
 
 TeamUser.create!(
   [
-    { team: sisagua, user: tiago, admin: true, active: true },
-    { team: sisagua, user: lluis, admin: false, active: true },
-    { team: sisagua, user: irene, admin: false, active: true }
+    { team: cbit, user: tiago, admin: true, active: true },
+    { team: cbit, user: clara, admin: false, active: true },
+    { team: cbit, user: mikel, admin: false, active: true }
   ]
 )
 
-today = Day.create!(team: sisagua)
+today = Day.create!(team: cbit)
 
-sisagua.team_users.each { |tu| Response.create!(team: sisagua, day: today, user: tu.user) }
+cbit.team_users.each { |tu| Response.create!(team: cbit, day: today, user: tu.user) }

@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.1', '>= 5.1.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -34,9 +34,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-bootstrap'
-end
+# source 'https://rails-assets.org' do
+#   gem 'rails-assets-bootstrap'
+# end
+gem 'bootstrap', '~> 4.0.0.beta'
+
 
 group :development, :test do
   # https://github.com/michaeldv/awesome_print
@@ -61,6 +63,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

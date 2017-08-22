@@ -2,7 +2,7 @@
   <h1><%= @response.team.name %></h1>
 </div>
 <p class="lead">
-  Glad to see you again, <strong><%= @response.user.name %></strong>. Please fill your responses on <%= @response.day.today %>
+  Glad to see you again, <strong><%= @response.user.name %></strong>. Please fill your responses for <%= @response.day.today %>
 </p>
 
 <%= render 'form', response: @response %>

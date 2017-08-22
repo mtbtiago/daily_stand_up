@@ -12,6 +12,11 @@
 
   <body class="<%= controller_name %> <%= action_name %>">
     <div class="container">
+      <noscript>
+        <div class="alert alert-warning" role="alert">
+          <strong>This application needs JavaScript enabled in your browser. </strong> <a href="http://www.enable-javascript.com" class="alert-link">Here is how to enable it.</a>
+        </div>
+      </noscript>
       <%= yield %>
     </div>
   </body>

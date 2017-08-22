@@ -2,7 +2,7 @@
   <h1><%= @response.team.name %></h1>
 </div>
 <p class="lead">
-  <strong><%= @response.user.name %></strong>. Your responses on <%= @response.day.today %>
+  <strong><%= @response.user.name %></strong>. Your responses for <%= @response.day.today %>
 </p>
 
 <% flash.each do |name, msg| %>
@@ -22,6 +22,8 @@
   <dd><%= @response.response_b %></dd>
   <dt><%= @response.team.question_c %></dt>
   <dd><%= @response.response_c %></dd>
+  <%# This sample demostrates CoffeeScript is enabled %>
+  <%#= button_tag 'sample', class: "btn btn-info", id: 'btn_sample' %>
 </dl>
 
 <footer class="footer">
