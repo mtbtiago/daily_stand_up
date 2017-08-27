@@ -5,9 +5,6 @@ window.App ||= {}
 
 App.init = ->
   self = @
-  # This sample demostrates CoffeeScript is enabled
-  $('#btn_sample').on 'click', (evt) ->
-    $('#btn_sample').hide()
 
 # event binding
 $(document).on "turbolinks:load", -> App.init()
