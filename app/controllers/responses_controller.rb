@@ -1,13 +1,17 @@
 class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :edit, :update, :destroy]
 
-  # GET /responses/1
-  # GET /responses/1.json
-  def show; end
+  def show
+    redirect_to edit_response_path(slug: @response.slug), flash: { error: 'User not respondended yet, must edit before' } \
+      if @response.user_responded.nil? && @response.on_time?
+  end
 
   # GET /responses/new
   # GET /responses/1/edit
-  def edit; end
+  def edit
+    redirect_to response_path(slug: @response.slug), flash: { error: 'Standup has finished. Cannot modify your responses' } \
+      unless @response.on_time?
+  end
 
   # PATCH/PUT /responses/1
   # PATCH/PUT /responses/1.json

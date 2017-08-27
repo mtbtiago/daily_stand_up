@@ -1,19 +1,10 @@
 <div class="page-header">
   <h1><%= @response.team.name %></h1>
 </div>
-<p class="lead">
-  <strong><%= @response.user.name %></strong>. Your responses for <%= @response.day.today %>
+<p class="h4">
+  <strong><%= @response.user.name %></strong>. Your responses for <strong><%= format_date @response.day.today %></strong>
 </p>
-
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, class: "alert alert-#{ name == 'error' ? "danger" : "success" } alert-dismissable", role: "alert" do %>
-    <button type="button" class="close" data-dismiss="alert">
-      <span aria-hidden="true">&times;</span>
-      <span class="sr-only">Close</span>
-    </button>
-    <%= msg %>
-  <% end %>
-<% end %>
+<p></p>
 
 <dl>
   <dt><%= @response.team.question_a %></dt>
@@ -27,5 +18,16 @@
 </dl>
 
 <footer class="footer">
-  Changed your mind? Don't worry, <%= link_to 'you can change your responses', edit_response_path(slug: @response.slug) %> again
+  <% if @response.on_time? %>
+    <p class="text-info">Changed your mind? Don't worry, <%= link_to 'you can change your responses', edit_response_path(slug: @response.slug), class: 'text-success' %>
+      until <%= format_datetime @response.day.standup_end %>
+      <span class="countdown" data-time="<%= time_to_js @response.day.standup_end %>">  (time left)
+        <%# new Date(parseFloat($('.countdown').data('time'))) %>
+      </span>
+    </p>
+  <% else %>
+    <p class="text-danger">
+      You cannot edit your responses due standup time has finished
+    </p>
+  <% end %>
 </footer>

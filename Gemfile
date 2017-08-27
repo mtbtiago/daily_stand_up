@@ -38,7 +38,8 @@ gem 'jbuilder', '~> 2.5'
 #   gem 'rails-assets-bootstrap'
 # end
 gem 'bootstrap', '~> 4.0.0.beta'
-
+# https://github.com/svenfuchs/rails-i18n
+gem 'rails-i18n', '~> 5.0.0'
 
 group :development, :test do
   # https://github.com/michaeldv/awesome_print

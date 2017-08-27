@@ -1,8 +1,14 @@
 <div class="page-header">
   <h1><%= @response.team.name %></h1>
 </div>
-<p class="lead">
-  Glad to see you again, <strong><%= @response.user.name %></strong>. Please fill your responses for <%= @response.day.today %>
+<p class="h4">
+  Glad to see you again, <strong><%= @response.user.name %></strong>. Please fill your responses for <strong><%= format_date @response.day.today %></strong>
 </p>
-
+<h5
+  class="text-info">Response poll closes on <%= format_stantup_time(@response) %>
+  <span class="countdown" data-time="<%= time_to_js @response.day.standup_end %>">  (time left)
+    <%# new Date(parseFloat($('.countdown').data('time'))) %>
+  </span>
+</h5>
+<p></p>
 <%= render 'form', response: @response %>
