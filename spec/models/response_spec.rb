@@ -1,6 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Response, type: :model do
+  before do
+    Timecop.freeze(frozen_datetime)
+  end
+
+  after do
+    Timecop.return
+  end
+
+  let(:frozen_datetime) { DateTime.new(2017, 7, 20, 8, 0, 0) }
+
   describe 'Validations' do
     it 'Should have a slug' do
       response = build(:response, slug: '')

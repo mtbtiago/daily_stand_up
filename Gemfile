@@ -54,6 +54,7 @@ group :development, :test do
   gem 'rack_session_access'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
+  gem 'timecop'
 end
 
 group :development do

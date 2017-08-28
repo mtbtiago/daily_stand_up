@@ -97,7 +97,7 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
-    load Rails.root.join('db', 'seeds.rb')
+    Timecop.freeze(DateTime.new(2017, 7, 20, 8, 0, 0)) { load Rails.root.join('db', 'seeds.rb') }
   end
 
   # This option will default to `:apply_to_host_groups` in RSpec 4 (and will
