@@ -21,9 +21,7 @@
   <% if @response.on_time? %>
     <p class="text-info">Changed your mind? Don't worry, <%= link_to 'you can change your responses', edit_response_path(slug: @response.slug), class: 'text-success' %>
       until <%= format_datetime @response.day.standup_end %>
-      <span class="countdown" data-time="<%= time_to_js @response.day.standup_end %>">  (time left)
-        <%# new Date(parseFloat($('.countdown').data('time'))) %>
-      </span>
+      <%= render 'poll_closes_at' %>    
     </p>
   <% else %>
     <p class="text-danger">

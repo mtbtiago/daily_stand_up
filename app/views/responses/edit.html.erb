@@ -6,9 +6,7 @@
 </p>
 <h5
   class="text-info">Response poll closes on <%= format_stantup_time(@response) %>
-  <span class="countdown" data-time="<%= time_to_js @response.day.standup_end %>">  (time left)
-    <%# new Date(parseFloat($('.countdown').data('time'))) %>
-  </span>
+  <%= render 'poll_closes_at' %>
 </h5>
 <p></p>
 <%= render 'form', response: @response %>

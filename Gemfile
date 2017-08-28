@@ -40,6 +40,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0.beta'
 # https://github.com/svenfuchs/rails-i18n
 gem 'rails-i18n', '~> 5.0.0'
+# https://rails-assets.org/#/components/moment
+gem 'rails-assets-moment', source: 'https://rails-assets.org'
 
 group :development, :test do
   # https://github.com/michaeldv/awesome_print

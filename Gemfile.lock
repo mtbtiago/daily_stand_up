@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actioncable (5.1.3)
       actionpack (= 5.1.3)
@@ -155,6 +156,7 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.1.3)
       sprockets-rails (>= 2.0.0)
+    rails-assets-moment (2.18.1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -262,6 +264,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rack_session_access
   rails (~> 5.1, >= 5.1.3)
+  rails-assets-moment!
   rails-i18n (~> 5.0.0)
   rspec-rails
   sass-rails (~> 5.0)
