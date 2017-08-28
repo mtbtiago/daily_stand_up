@@ -9,6 +9,7 @@ AllCops:
     - bin/*
     - views/**/*
     - config/environments/*.rb
+    - Gemfile
 
 Metrics/ModuleLength:
   Max: 350

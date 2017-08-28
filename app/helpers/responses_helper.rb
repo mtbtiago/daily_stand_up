@@ -1,6 +1,6 @@
 module ResponsesHelper
   def format_time(hour, minute)
-    I18n.l Time.parse("#{hour}:#{minute}"), format: '%H:%M'
+    I18n.l Time.zone.parse("#{hour}:#{minute}"), format: '%H:%M'
   end
 
   def format_date(date)

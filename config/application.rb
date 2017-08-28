@@ -8,6 +8,11 @@ Bundler.require(*Rails.groups)
 
 module DailyStandUp
   class Application < Rails::Application
+    config.i18n.default_locale = :en
+    # http://www.createdbypete.com/articles/working-with-locales-and-time-zones-in-rails/
+    config.time_zone = 'Madrid'
+    config.active_record.default_timezone = :local
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

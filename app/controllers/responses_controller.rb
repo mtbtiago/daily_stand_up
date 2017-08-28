@@ -1,5 +1,5 @@
 class ResponsesController < ApplicationController
-  before_action :set_response, only: [:show, :edit, :update, :destroy]
+  before_action :set_response, only: %i[show edit update destroy]
 
   def show
     redirect_to edit_response_path(slug: @response.slug), flash: { error: 'User not respondended yet, must edit before' } \

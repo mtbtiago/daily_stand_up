@@ -9,7 +9,7 @@ RSpec.describe Response, type: :model do
     Timecop.return
   end
 
-  let(:frozen_datetime) { DateTime.new(2017, 7, 20, 8, 0, 0) }
+  let(:frozen_datetime) { Time.zone.local(2017, 7, 20, 8, 0, 0) }
 
   describe 'Validations' do
     it 'Should have a slug' do

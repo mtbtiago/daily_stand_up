@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :responses, param: :slug, only: [:show, :edit, :update]
+  resources :responses, param: :slug, only: %i[show edit update]
 end

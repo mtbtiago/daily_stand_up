@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170227192140) do
 
   create_table "days", id: :serial, force: :cascade do |t|
     t.integer "team_id"
-    t.date "today"
+    t.datetime "today"
     t.datetime "response_sent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
