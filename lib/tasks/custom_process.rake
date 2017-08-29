@@ -33,7 +33,10 @@ namespace :custom do
 
       def send_questions
         puts 'Sending questions'
-        @day.responses.each { |response| puts "Sending questions to #{response.user.name} at #{response.user.email}" }
+        @day.responses.each do |response|
+          puts "Sending questions to #{response.user.name} at #{response.user.email}"
+          QuestionsAndResponsesMailer.send_questions(response).deliver
+        end
         @day.update_attributes(question_sent: Time.zone.now)
       end
 
