@@ -17,7 +17,7 @@ namespace :custom do
       def execute
         puts "Processing #{@day.today.to_date} for team #{@day.team.name}"
         if @day.response_sent
-          puts "Today's response sent yet"
+          puts "Today's responses sent yet"
         elsif Time.zone.now >= @day.standup_end
           send_responses
         elsif @day.question_sent
