@@ -7,6 +7,10 @@ class Day < ApplicationRecord
     self.today = Time.zone.today if today.nil?
   end
 
+  def standup_start
+    today.to_datetime + Time.zone.parse("#{team.standup_start_hour}:#{team.standup_start_minute}").seconds_since_midnight.seconds
+  end
+
   def standup_end
     today.to_datetime + Time.zone.parse("#{team.standup_end_hour}:#{team.standup_end_minute}").seconds_since_midnight.seconds
   end
